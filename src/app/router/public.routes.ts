@@ -34,7 +34,7 @@ export const PUBLIC_ROUTES: Routes = [
           ).then((m) => m.ForgotPasswordModule),
       },
       {
-        path: Path.ForgotPassword,
+        path: Path.ForgotPasswordEmailSent,
         loadChildren: () =>
           import(
             '@app/pages/public/auth/forgot-password-email-sent/forgot-password-email-sent.module'

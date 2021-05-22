@@ -16,19 +16,12 @@ module.exports = {
       center: true,
       padding: '1.5rem',
     },
-    /* colors: {
-      indigo: {
-        light: '#b3bcf5',
-        DEFAULT: '#5c6ac4',
-        dark: '#202e78',
-      },
-    }, */
-    extends: {
-      color: {
-        inherit: 'inherit',
-        transparent: 'transparent',
-        current: 'currentColor',
-      },
+    colors: {
+      darkbrown: '#211',
+      lightblue: '#cfe6f6',
+      lightgreen: '#6ebbb5',
+      darkgreen: '#006764',
+      white: '#ffffff',
     },
   },
   variants: {},

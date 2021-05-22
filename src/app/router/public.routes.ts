@@ -27,6 +27,13 @@ export const PUBLIC_ROUTES: Routes = [
           ),
       },
       {
+        path: Path.Hexagons,
+        loadChildren: () =>
+          import(
+            '@app/pages/public/hexagons/hexagons.module'
+            ).then((m) => m.HexagonsModule),
+      },
+      {
         path: Path.ForgotPassword,
         loadChildren: () =>
           import(

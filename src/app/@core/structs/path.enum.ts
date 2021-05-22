@@ -15,6 +15,7 @@ export enum Path {
   // App base url
   Dashboard = 'dashboard',
   Token = 'token',
+  Hexagons = 'hexagons',
 
   // Settings
   Settings = 'settings',

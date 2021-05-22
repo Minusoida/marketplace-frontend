@@ -35,6 +35,13 @@ export const PRIVATE_ROUTES: Routes = [
             ).then((m) => m.TokenModule),
       },
       {
+        path: Path.Hexagons,
+        loadChildren: () =>
+          import(
+            '@app/pages/public/hexagons/hexagons.module'
+            ).then((m) => m.HexagonsModule),
+      },
+      {
         path: Path.SettingsAppearance,
         loadChildren: () =>
           import('@pages/private/settings/appearance/appearance.module').then(

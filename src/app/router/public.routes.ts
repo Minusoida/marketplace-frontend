@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { NoAuthGuard } from '@app/@core/guards';
 import { Path } from '@app/@core/structs';
 
 export const PUBLIC_ROUTES: Routes = [
@@ -10,7 +9,7 @@ export const PUBLIC_ROUTES: Routes = [
   },
   {
     path: '',
-    canActivate: [NoAuthGuard],
+    //canActivate: [NoAuthGuard],
     children: [
       {
         path: Path.SignIn,
@@ -60,6 +59,13 @@ export const PUBLIC_ROUTES: Routes = [
           import(
             '@app/pages/public/auth/password-reset-failed/password-reset-failed.module'
           ).then((m) => m.PasswordResetFailedModule),
+      },
+      {
+        path: Path.Landing,
+        loadChildren: () =>
+          import(
+            '@app/pages/public/landing-page/landing-page.module'
+          ).then((m) => m.LandingPageModule),
       },
     ],
   },

@@ -14,6 +14,10 @@ export class AuthService {
     return this.isLoggedIn$.getValue();
   }
 
+  signUp(): void {
+    this.signIn();
+  }
+
   signIn(): void {
     const token = Array(4)
       .fill(0)

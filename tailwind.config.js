@@ -11,10 +11,18 @@ module.exports = {
       display: ['Oswald', 'sans-serif'],
       body: ['Poppins', 'sans-serif'],
     },
+
     container: {
       center: true,
       padding: '1.5rem',
     },
+    /* colors: {
+      indigo: {
+        light: '#b3bcf5',
+        DEFAULT: '#5c6ac4',
+        dark: '#202e78',
+      },
+    }, */
     extends: {
       color: {
         inherit: 'inherit',

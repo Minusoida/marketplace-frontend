@@ -5,7 +5,7 @@ import { Path } from '@app/@core/structs';
 export const PRIVATE_ROUTES: Routes = [
   {
     path: '',
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       {
         path: Path.Dashboard,
@@ -26,6 +26,13 @@ export const PRIVATE_ROUTES: Routes = [
           import('@pages/private/settings/account/account.module').then(
             (m) => m.AccountModule,
           ),
+      },
+      {
+        path: Path.Token,
+        loadChildren: () =>
+          import(
+            '@app/pages/public/token/token.module'
+            ).then((m) => m.TokenModule),
       },
       {
         path: Path.SettingsAppearance,
@@ -73,7 +80,7 @@ export const PRIVATE_ROUTES: Routes = [
   },
   {
     path: Path.Users,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       {
         path: Path.UsersProfile,

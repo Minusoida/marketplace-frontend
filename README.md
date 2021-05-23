@@ -32,7 +32,7 @@ For running the application locally you will need node 12.14.1 and npm
 6.13.4. After cloning the repository run the following commands:
 ```bash
 npm install
-ng start
+ng serve
 ```
 The application should be visible on address `localhost:4200`.
 

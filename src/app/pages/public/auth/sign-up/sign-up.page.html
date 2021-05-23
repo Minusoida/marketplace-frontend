@@ -1,35 +1,78 @@
-<div class="container flex flex-col items-center justify-center h-full">
-  <p class="mb-8 text-5xl text-center">Sign up</p>
-  <div class="container flex flex-col items-center justify-center">
-    <div class="form-group row">
-      <div class="block text-black text-lg font-bold mb-2">
-        <input class="form-control rounded-md h-10 px-4 py-3" type="text" placeholder="Username">
+<div class="flex flex-auto flex-row">
+  <div class="flex flex-auto flex-col">
+    <div class="flex flex-auto items justify-start items-start pt-8">
+      <img src="./assets/images/logo.png" class="w-1/2 ml-16" />
+    </div>
+    <div class="flex flex-auto items justify-start">
+      <div class="ml-16 max-w-xs mt-6">
+        Own chunks of virtual Slovenian natural landmarks and support
+        organizations that look after the real ones.
       </div>
     </div>
-    <div class="form-group row">
-      <div class="block text-black text-lg font-bold mb-2">
-        <input class="form-control rounded-md h-10 px-4 py-3" type="email" placeholder="Email">
+  </div>
+
+  <div class="container flex flex-col items-center justify-center h-full">
+    <p class="mb-8 text-5xl text-center">Sign up</p>
+    <div class="container flex flex-col items-center justify-center">
+      <div class="form-group row">
+        <div class="block text-black text-lg font-bold mb-2">
+          <input
+            class="form-control rounded-md h-10 px-4 py-3"
+            type="text"
+            placeholder="Username"
+          />
+        </div>
       </div>
-    </div>
-    <div class="form-group row">
-      <div class="block text-black text-lg font-bold mb-2">
-        <input class="form-control rounded-md h-10 px-4 py-3" type="password" placeholder="Password">
+      <div class="form-group row">
+        <div class="block text-black text-lg font-bold mb-2">
+          <input
+            class="form-control rounded-md h-10 px-4 py-3"
+            type="email"
+            placeholder="Email"
+          />
+        </div>
       </div>
-    </div>
-    <div class="form-group row">
-      <div class="block text-black text-lg font-bold mb-2">
-        <input class="form-control rounded-md h-10 px-4 py-3" type="password" placeholder="Repeat password">
+      <div class="form-group row">
+        <div class="block text-black text-lg font-bold mb-2">
+          <input
+            class="form-control rounded-md h-10 px-4 py-3"
+            type="password"
+            placeholder="Password"
+          />
+        </div>
       </div>
-    </div>
-    <div class="form-group row mt-4">
-      <button
-        class="block h-10 px-4 py-2 font-semibold text-white bg-darkgreen-900 rounded-lg hover:bg-darkgreen-700 focus:ring-4 focus:ring-offset-blue-600 focus:outline-none"
-        (click)="onClickSignUp()">
-        Sign up
-      </button>
-    </div>
-    <div class="form-group row mt-2">
-      <a class="text-xs" href="sign-in">Already signed up?</a>
+      <div class="form-group row">
+        <div class="block text-black text-lg font-bold mb-2">
+          <input
+            class="form-control rounded-md h-10 px-4 py-3"
+            type="password"
+            placeholder="Repeat password"
+          />
+        </div>
+      </div>
+      <div class="form-group row mt-4">
+        <button
+          class="
+            block
+            h-10
+            px-4
+            py-2
+            font-semibold
+            text-white
+            bg-darkgreen-900
+            rounded-lg
+            hover:bg-darkgreen-700
+            focus:ring-4 focus:ring-offset-blue-600
+            focus:outline-none
+          "
+          (click)="onClickSignUp()"
+        >
+          Sign up
+        </button>
+      </div>
+      <div class="form-group row mt-2">
+        <a class="text-xs" href="sign-in">Already signed up?</a>
+      </div>
     </div>
   </div>
 </div>

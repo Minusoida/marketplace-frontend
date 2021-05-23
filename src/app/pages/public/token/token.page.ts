@@ -29,10 +29,11 @@ export class TokenPage implements OnInit {
   ]
 
   popup: boolean = false;
-  popupShare: number = 0;
-  popupPrice: number = 0;
   popupIx: number = 0;
   cart: number[] = [];
+  popupDelete: any;
+  popupDeleteIx: number = 0;
+  popupBought: boolean = false;
   constructor() {}
 
   ngOnInit(): void {
@@ -41,22 +42,21 @@ export class TokenPage implements OnInit {
   buttonOnClick(event:any, ix:number, state: number) {
     if (state === 1) {
       this.items[ix][0] = 3
-      this.popupPrice = this.items[ix][1]
-      this.popupShare = this.items[ix][2]
       this.popup = true;
       this.popupIx = ix
     } else if (state === 3) {
-      this.items[ix][0] = 1
-      const index = this.cart.indexOf(ix, 0);
-      if (index > -1) {
-        this.cart.splice(index, 1);
-      }
+      this.popupDeleteIx = ix;
+      this.popupDelete = true
     }
   }
 
   cancelPopup() {
     this.popup = false
     this.items[this.popupIx][0] = 1
+  }
+
+  cancelPopupDelete() {
+    this.popupDelete = false
   }
 
   addToCart() {
@@ -70,5 +70,26 @@ export class TokenPage implements OnInit {
       sum += this.items[this.cart[ix]][1]
     }
     return sum
+  }
+
+  removeFromCart() {
+    this.popupDelete = false
+    this.items[this.popupDeleteIx][0] = 1
+    const index = this.cart.indexOf(this.popupDeleteIx, 0);
+    if (index > -1) {
+      this.cart.splice(index, 1);
+    }
+  }
+
+  buyTokens() {
+    for (let ix = 0; ix < this.cart.length; ix++) {
+      this.items[this.cart[ix]][0] = 4
+    }
+    this.cart = []
+    this.popupBought = true;
+  }
+
+  cancelBought() {
+    this.popupBought = false;
   }
 }

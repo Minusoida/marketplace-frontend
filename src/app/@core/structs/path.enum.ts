@@ -15,10 +15,9 @@ export enum Path {
 
   // App base url
   Dashboard = 'dashboard',
-  Token = 'token',
+  Token = 'triglavski-narodni-park',
   Hexagons = 'home',
   MyCollection = 'my-collection',
-  Triglav="triglavski-narodni-park",
   ŠkocjanskeJame="skocjanske-jame",
 
   // Settings

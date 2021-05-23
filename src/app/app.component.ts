@@ -22,7 +22,6 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log('app component init');
     this.seoService.init();
     this.themeService.init();
     this.isLoggedIn$ = this.authService.isLoggedIn$;

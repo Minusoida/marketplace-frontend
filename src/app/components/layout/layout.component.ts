@@ -9,7 +9,5 @@ import { Component, OnInit } from '@angular/core';
 export class LayoutComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {
-    console.log('LayoutComponent on init');
-  }
+  ngOnInit(): void {}
 }

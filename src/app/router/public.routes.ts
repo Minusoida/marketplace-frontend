@@ -37,41 +37,6 @@ export const PUBLIC_ROUTES: Routes = [
           ),
       },
       {
-        path: Path.ForgotPassword,
-        loadChildren: () =>
-          import(
-            '@app/pages/public/auth/forgot-password/forgot-password.module'
-          ).then((m) => m.ForgotPasswordModule),
-      },
-      {
-        path: Path.ForgotPasswordEmailSent,
-        loadChildren: () =>
-          import(
-            '@app/pages/public/auth/forgot-password-email-sent/forgot-password-email-sent.module'
-          ).then((m) => m.ForgotPasswordEmailSentModule),
-      },
-      {
-        path: Path.PasswordReset,
-        loadChildren: () =>
-          import('@app/pages/public/token/token.module').then(
-            (m) => m.TokenModule,
-          ),
-      },
-      {
-        path: Path.PasswordResetSucceeded,
-        loadChildren: () =>
-          import(
-            '@app/pages/public/auth/password-reset-succeeded/password-reset-succeeded.module'
-          ).then((m) => m.PasswordResetSucceededModule),
-      },
-      {
-        path: Path.PasswordResetFailed,
-        loadChildren: () =>
-          import(
-            '@app/pages/public/auth/password-reset-failed/password-reset-failed.module'
-          ).then((m) => m.PasswordResetFailedModule),
-      },
-      {
         path: Path.Token,
         loadChildren: () =>
           import('@app/pages/public/token/token.module').then(

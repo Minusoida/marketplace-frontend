@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostListener,
+  OnInit,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { Path } from '@app/@core/structs';
 import { AuthService } from '@app/pages/public/auth/_services/auth.service';
@@ -11,13 +16,32 @@ import { AuthService } from '@app/pages/public/auth/_services/auth.service';
 })
 export class HeaderComponent implements OnInit {
   path = Path;
+  logoVisible: boolean = false;
 
   constructor(private router: Router, private authService: AuthService) {}
+
+  get isLoggedIn() {
+    return this.authService.isLoggedIn;
+  }
 
   ngOnInit(): void {}
 
   onClickSignOut(): void {
-    this.authService.signOut();
-    this.router.navigate(['/', Path.SignIn]);
+    if (this.isLoggedIn) {
+      this.authService.signOut();
+      this.router.navigate(['/', Path.SignIn]);
+    } else {
+      this.router.navigateByUrl(`/${Path.SignUp}`);
+    }
+  }
+
+  @HostListener('window:scroll', ['$event']) // for window scroll events
+  onScroll(event: any) {
+    console.log(document.documentElement.scrollTop);
+    if (document.documentElement.scrollTop < 15) {
+      this.logoVisible = false;
+    } else {
+      this.logoVisible = true;
+    }
   }
 }

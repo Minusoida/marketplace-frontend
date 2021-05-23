@@ -3,10 +3,13 @@ import { Routes } from '@angular/router';
 import { Path } from '@app/@core/structs';
 
 export const PUBLIC_ROUTES: Routes = [
+  { path: '', redirectTo: `/${Path.Dashboard}`, pathMatch: 'full' },
   {
-    path: Path.Home,
+    path: Path.Dashboard,
     loadChildren: () =>
-      import('@app/pages/public/home/home.module').then((m) => m.HomeModule),
+      import('@app/pages/public/hexagons/hexagons.module').then(
+        (m) => m.HexagonsModule,
+      ),
   },
   {
     path: '',
@@ -29,65 +32,16 @@ export const PUBLIC_ROUTES: Routes = [
       {
         path: Path.Hexagons,
         loadChildren: () =>
-          import(
-            '@app/pages/public/hexagons/hexagons.module'
-            ).then((m) => m.HexagonsModule),
-      },
-      {
-        path: Path.ForgotPassword,
-        loadChildren: () =>
-          import(
-            '@app/pages/public/auth/forgot-password/forgot-password.module'
-          ).then((m) => m.ForgotPasswordModule),
-      },
-      {
-        path: Path.MyCollection,
-        loadChildren: () =>
-          import(
-            '@app/pages/private/my-collection/my-collection.module'
-            ).then((m) => m.MyCollectionModule),
-      },
-      {
-        path: Path.ForgotPasswordEmailSent,
-        loadChildren: () =>
-          import(
-            '@app/pages/public/auth/forgot-password-email-sent/forgot-password-email-sent.module'
-          ).then((m) => m.ForgotPasswordEmailSentModule),
-      },
-      {
-        path: Path.PasswordReset,
-        loadChildren: () =>
-          import(
-            '@app/pages/public/token/token.module'
-          ).then((m) => m.TokenModule),
-      },
-      {
-        path: Path.PasswordResetSucceeded,
-        loadChildren: () =>
-          import(
-            '@app/pages/public/auth/password-reset-succeeded/password-reset-succeeded.module'
-          ).then((m) => m.PasswordResetSucceededModule),
-      },
-      {
-        path: Path.PasswordResetFailed,
-        loadChildren: () =>
-          import(
-            '@app/pages/public/auth/password-reset-failed/password-reset-failed.module'
-          ).then((m) => m.PasswordResetFailedModule),
+          import('@app/pages/public/hexagons/hexagons.module').then(
+            (m) => m.HexagonsModule,
+          ),
       },
       {
         path: Path.Token,
         loadChildren: () =>
-          import(
-            '@app/pages/public/token/token.module'
-            ).then((m) => m.TokenModule),
-      },
-      {
-        path: Path.Landing,
-        loadChildren: () =>
-          import(
-            '@app/pages/public/landing-page/landing-page.module'
-            ).then((m) => m.LandingPageModule),
+          import('@app/pages/public/token/token.module').then(
+            (m) => m.TokenModule,
+          ),
       },
     ],
   },

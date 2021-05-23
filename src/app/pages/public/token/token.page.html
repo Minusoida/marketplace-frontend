@@ -1,38 +1,46 @@
 <div class="max-w-[calc(100%+1rem)]  py-6 px-8 bg-white shadow-lg rounded-lg my-10 mx-10">
-<!--  <div class="flex justify-center md:justify-end -mt-16">-->
-<!--    <img class="w-20 h-20 object-cover rounded-full border-2 border-indigo-500" src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80">-->
-<!--  </div>-->
+
   <div>
-    
-    <div class="grid grid-cols-2">
-      
-      <div class="px-20 flex flex-col items-center">
-        <h2 class="text-gray-800 text-3xl font-semibold text-center">{{this.tokenName}}</h2>
-        <img src="./assets/snow-capped-mountain.png" width="60%" alt="Gora">
+    <div class="grid grid-cols-3">
+      <div class="px-20 flex flex-col items-center col-span-2">
+<!--        <ul class="buttons bg-cover" style="width:100%; height:100%; background-image: url('./assets/images/triglavski_narodni_park.png')">-->
+          <ul id="hexGrid" style="width:100%; background-image: url('./assets/images/triglavski_narodni_park.png'); background-size: 100% 100%;">
+            <li *ngFor='let state of items; let i = index' class="hex red-{{state[0]}}">
+              <div class="hexIn">
+                <a class="hexLink" (click)="buttonOnClick($event, i, state[0])" [ngClass]="'hex-' + state[0]" style="opacity: 0.2">
+                  <span></span>
+                </a>
+              </div>
+            </li>
+          </ul>
       </div>
-      <div class="px-20">
-        <p>Funding plan: {{this.givenFunding}} € / {{this.wantedFunding}} €</p>
-        <p class="mt-2 text-gray-600">
-          <p class="font-bold text-xl">Spending resources:</p>
-          <ul class="list-disc">
-            <li>Renovated and refurbished the Škocjan Caves Information Centre in Matavun and furnished Information Point where visitors can obtain information on the Škocjan Caves Park, the Classical Karst on both sides of the border and the area of influence.
-            <li>Prepared map of habitat types for part of the transitional area of the Škocjan Caves Park.
-            <li>Trained voluntary nature protection supervisors.
-            <li>Equipped laboratory classroom as well as the geological and biological exhibitions in the Škocjan 3 Natural Science Centre.
-            <li>Strengthened co-operation with the Park's Network of Schools.
-            <li>Brochure published in co-operation with cross-border partners on protected areas in the Classical Karst.
-         </ul>
+      <div>
+          <h2 class="mt-20 text-gray-800 text-3xl font-semibold">{{this.tokenName}}</h2>
+        <span class="font-bold text-xl">How your contribution will be used</span>
+        <p class="ml-4">Triglav National park will use your donations for project called "Vrh Julijcev", that is trying to improve the state of species and habitat types in Triglav National park. The project has 8 goals which will be achieved with the help of 9 slovenian partners that work in the field of preserving nature, culture heritage and promotion.</p>
+
         <div class="grid grid-cols-2 mt-6">
+          <div></div>
           <div>
-            <p class="font-bold text-xl	py-2 px-10">Price: {{this.price}} €</p>
-          </div>
-          <div>
-            <button class="bg-lightgreen hover:bg-blue-700 text-white font-bold py-2 px-10 rounded">
+            <button class="bg-darkgreen-900 hover:bg-darkgreen-700 text-white font-bold py-2 px-10 rounded">
               Support the cause
             </button>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+<div class="overlay" *ngIf="this.popup">
+  <div class="popup">
+    <h3>Supporting a good cause</h3>
+    <a class="close" (click)="this.cancelPopup()">&times;</a>
+    <div class="content">
+      <p class="font-medium text-l	py-2">You are about to become an owner of <span class="font-bold">{{this.popupShare}}%</span> of virtual natural landmark: <span class="font-bold">{{this.tokenName}}</span>.</p>
+      <p class="font-medium text-xl	py-2"><span class="font-bold">NFT value:</span> {{this.popupPrice}} €</p>
+      <button class="bg-darkgreen-900 hover:bg-darkgreen-700 text-white font-bold py-2 px-10 rounded" style="margin-left: 50%;" (click)="this.addToCart()">
+        Add to cart
+      </button>
     </div>
   </div>
 </div>

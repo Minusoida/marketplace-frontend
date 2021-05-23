@@ -14,7 +14,14 @@
           </ul>
       </div>
       <div>
-          <h2 class="mt-20 text-gray-800 text-3xl font-semibold">{{this.tokenName}}</h2>
+        <div class="flex flex-auto">
+          <div
+            class="flex flex-auto justify-end cursor-pointer font-bold"
+            (click)="onExitClick($event)">
+            X
+          </div>
+        </div>
+          <h2 class="mt-10 text-gray-800 text-3xl font-semibold">{{this.tokenName}}</h2>
         <span class="font-bold text-xl">How your contribution will be used</span>
         <p class="mb-4">Triglav National park will use your donations for project called "Vrh Julijcev", that is trying to improve the state of species and habitat types in Triglav National park. The project has 8 goals which will be achieved with the help of 9 slovenian partners that work in the field of preserving nature, culture heritage and promotion.</p>
         <span class="font-bold text-xl" *ngIf="this.cart.length > 0">My cart</span>
@@ -40,6 +47,7 @@
     </div>
   </div>
 </div>
+
 <div class="overlay" *ngIf="this.popup">
   <div class="popup">
     <h3>Supporting a good cause</h3>
@@ -64,51 +72,9 @@
         Remove from cart
       </button>
     </div>
-        </div>
-        <div>
-          <div class="flex flex-auto">
-            <div
-              class="flex flex-auto justify-end cursor-pointer font-bold"
-              (click)="onExitClick($event)"
-            >
-              X
-            </div>
-          </div>
-          <h2 class="mt-16 text-gray-800 text-3xl font-semibold">
-            {{this.tokenName}}
-          </h2>
-          <span class="font-bold text-xl"
-            >How your contribution will be used</span
-          >
-          <p>
-            Triglav National park will use your donations for project called
-            "Vrh Julijcev", that is trying to improve the state of species and
-            habitat types in Triglav National park. The project has 8 goals
-            which will be achieved with the help of 9 slovenian partners that
-            work in the field of preserving nature, culture heritage and
-            promotion.
-          </p>
+  </div>
+</div>
 
-          <div class="grid grid-cols-2 mt-6">
-            <div></div>
-            <div>
-              <button
-                class="
-                  bg-darkgreen-900
-                  hover:bg-darkgreen-700
-                  text-white
-                  font-bold
-                  py-2
-                  px-10
-                  rounded
-                "
-              >
-                Support the cause
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
   <div class="overlay" *ngIf="this.popup">
     <div class="popup">
       <h3>Supporting a good cause</h3>

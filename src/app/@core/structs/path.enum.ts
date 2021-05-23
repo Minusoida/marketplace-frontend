@@ -2,6 +2,7 @@ export enum Path {
   // General containers
   Home = '',
   NotFound = '404',
+  Landing = 'landing',
 
   // Auth
   SignIn = 'sign-in',

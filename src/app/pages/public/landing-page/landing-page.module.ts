@@ -1,16 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { LandingPageComponent } from './landing-page.component';
 
 @NgModule({
-  declarations: [
-    LandingPageComponent
-  ],
+  declarations: [LandingPageComponent],
   imports: [
     CommonModule,
-    LeafletModule,
     RouterModule.forChild([
       {
         path: '',
@@ -23,6 +19,6 @@ import { LandingPageComponent } from './landing-page.component';
         },
       },
     ]),
-  ]
+  ],
 })
-export class LandingPageModule { }
+export class LandingPageModule {}

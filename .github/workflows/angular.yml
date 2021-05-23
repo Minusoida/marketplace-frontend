@@ -1,0 +1,26 @@
+name: Deploy to Heroku
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Uporabi Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install dependencies
+        working-directory: ${{ env.working-directory }}
+        run: npm install
+      - shell: bash
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        run: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/marketnf.git

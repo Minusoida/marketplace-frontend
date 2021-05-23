@@ -1,0 +1,6 @@
+<img class="background-image" src='assets/images/triglavski_narodni_park.png'>
+<div class="buttons">
+  <div *ngFor='let i of items'>
+    <span *ngFor='let j of i' class="red-{{j}}" (click)=buttonOnClick(i)><i></i></span>
+  </div>
+</div>

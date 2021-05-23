@@ -41,6 +41,13 @@ export const PUBLIC_ROUTES: Routes = [
           ).then((m) => m.ForgotPasswordModule),
       },
       {
+        path: Path.MyCollection,
+        loadChildren: () =>
+          import(
+            '@app/pages/private/my-collection/my-collection.module'
+            ).then((m) => m.MyCollectionModule),
+      },
+      {
         path: Path.ForgotPasswordEmailSent,
         loadChildren: () =>
           import(
@@ -74,6 +81,13 @@ export const PUBLIC_ROUTES: Routes = [
           import(
             '@app/pages/public/token/token.module'
             ).then((m) => m.TokenModule),
+      },
+      {
+        path: Path.Landing,
+        loadChildren: () =>
+          import(
+            '@app/pages/public/landing-page/landing-page.module'
+            ).then((m) => m.LandingPageModule),
       },
     ],
   },

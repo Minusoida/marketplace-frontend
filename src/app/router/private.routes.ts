@@ -18,7 +18,7 @@ export const PRIVATE_ROUTES: Routes = [
   },
   {
     path: Path.Settings,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       {
         path: Path.SettingsAccount,
@@ -28,11 +28,25 @@ export const PRIVATE_ROUTES: Routes = [
           ),
       },
       {
+        path: Path.MyCollection,
+        loadChildren: () =>
+          import(
+            '@app/pages/private/my-collection/my-collection.module'
+            ).then((m) => m.MyCollectionModule),
+      },
+      {
         path: Path.Token,
         loadChildren: () =>
           import(
             '@app/pages/public/token/token.module'
             ).then((m) => m.TokenModule),
+      },
+      {
+        path: Path.Triglav,
+        loadChildren: () =>
+          import(
+            '@app/pages/public/triglav/triglav.module'
+            ).then((m) => m.TriglavModule),
       },
       {
         path: Path.Hexagons,

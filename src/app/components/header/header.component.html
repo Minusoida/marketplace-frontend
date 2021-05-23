@@ -47,6 +47,7 @@
         Marketplace
       </button>
       <button
+        *ngIf='isLoggedIn'
         [routerLink]="[path.MyCollection]"
         class="
           inline-block

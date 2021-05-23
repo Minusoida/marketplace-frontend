@@ -43,6 +43,13 @@ export const PUBLIC_ROUTES: Routes = [
             (m) => m.TokenModule,
           ),
       },
+      {
+        path: Path.MyCollection,
+        loadChildren: () =>
+          import('@app/pages/public/my-collection/my-collection.module').then(
+            (m) => m.MyCollectionModule,
+          ),
+      },
     ],
   },
 ];

@@ -1,12 +1,6 @@
 <header
-  class="
-    sticky
-    top-0
-    w-full
-    h-16
-    z-30
-    dark:bg-gray-700 backdrop-filter
-  "
+  class="sticky top-0 w-full h-16 z-30 dark:bg-gray-700 backdrop-filter"
+  [ngClass]="logoVisible ? 'bg-lightgreen' : ''"
 >
   <nav
     class="
@@ -24,11 +18,17 @@
       [routerLink]="[path.Home]"
       class="text-2xl font-bold no-underline cursor-pointer"
     >
-      <span class="text-gray-400">A</span>B
+      <img
+        style="height: auto; width: auto; max-height: 72px; max-width: 250px"
+        class="p-3"
+        [ngStyle]="{ visibility: logoVisible ? 'visible' : 'hidden' }"
+        src="./assets/images/logo_navbar.png"
+      />
     </a>
 
     <div class="flex items-center">
       <button
+        [routerLink]="[path.Hexagons]"
         class="
           inline-block
           h-12
@@ -47,6 +47,7 @@
         Marketplace
       </button>
       <button
+        [routerLink]="[path.MyCollection]"
         class="
           inline-block
           h-12
@@ -60,9 +61,10 @@
           focus:ring-4 focus:ring-offset-gray-300
           focus:outline-none
           bg-yellow-900
+          rounded
         "
       >
-        Collection
+        My collection
       </button>
       <button
         class="
@@ -79,7 +81,8 @@
         "
         (click)="onClickSignOut()"
       >
-        Sign out
+        <div *ngIf="isLoggedIn">Sign out</div>
+        <div *ngIf="!isLoggedIn">Sign in</div>
       </button>
     </div>
   </nav>

@@ -16,7 +16,7 @@ export enum Path {
   // App base url
   Dashboard = 'dashboard',
   Token = 'token',
-  Hexagons = 'hexagons',
+  Hexagons = 'home',
   MyCollection = 'my-collection',
   Triglav="triglavski-narodni-park",
   ŠkocjanskeJame="skocjanske-jame",

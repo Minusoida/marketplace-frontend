@@ -30,16 +30,11 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "./node_modules/leaflet/dist/images",
-                "output": "leaflet/"
-              },
               "src/favicon.ico",
               "src/assets",
               "src/manifest.webmanifest"
             ],
-            "styles": ["src/theme/styles.scss","./node_modules/leaflet/dist/leaflet.css"],
+            "styles": ["src/theme/styles.scss"],
             "scripts": []
           },
           "configurations": {

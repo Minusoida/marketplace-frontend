@@ -1,49 +1,121 @@
 <div class="flex flex-col justify-center items-center">
-  
-  <div class="max-w-[calc(100%+1rem)] japop py-6 px-8 bg-white shadow-lg rounded-lg my-10 mx-10">
-  
-  <div>
-    <div class="grid grid-cols-3 ">
-      <div class="px-20 flex flex-col justify-center items-center col-span-2">
-  <!--        <ul class="buttons bg-cover" style="width:100%; height:100%; background-image: url('./assets/images/triglavski_narodni_park.png')">-->
-          <ul id="hexGrid" style="width:100%; background-image: url('./assets/images/triglavski_narodni_park.png'); background-size: 100% 100%;">
-            <li *ngFor='let state of items; let i = index' class="hex red-{{state[0]}}">
+  <div
+    class="
+      max-w-[calc(100%+1rem)]
+      japop
+      py-6
+      px-8
+      bg-white
+      shadow-lg
+      rounded-lg
+      my-10
+      mx-10
+    "
+  >
+    <div>
+      <div class="grid grid-cols-3">
+        <div class="px-20 flex flex-col justify-center items-center col-span-2">
+          <!--        <ul class="buttons bg-cover" style="width:100%; height:100%; background-image: url('./assets/images/triglavski_narodni_park.png')">-->
+          <ul
+            id="hexGrid"
+            style="
+              width: 100%;
+              background-image: url('./assets/images/triglavski_narodni_park.png');
+              background-size: 100% 100%;
+            "
+          >
+            <li
+              *ngFor="let state of items; let i = index"
+              class="hex red-{{state[0]}}"
+            >
               <div class="hexIn">
-                <a class="hexLink" (click)="buttonOnClick($event, i, state[0])" [ngClass]="'hex-' + state[0]" style="opacity: 0.2">
+                <a
+                  class="hexLink"
+                  (click)="buttonOnClick($event, i, state[0])"
+                  [ngClass]="'hex-' + state[0]"
+                  style="opacity: 0.2"
+                >
                   <span></span>
                 </a>
               </div>
             </li>
           </ul>
-      </div>
-      <div>
-          <h2 class="mt-20 text-gray-800 text-3xl font-semibold">{{this.tokenName}}</h2>
-        <span class="font-bold text-xl">How your contribution will be used</span>
-        <p>Triglav National park will use your donations for project called "Vrh Julijcev", that is trying to improve the state of species and habitat types in Triglav National park. The project has 8 goals which will be achieved with the help of 9 slovenian partners that work in the field of preserving nature, culture heritage and promotion.</p>
-  
-        <div class="grid grid-cols-2 mt-6">
-          <div></div>
-          <div>
-            <button class="bg-darkgreen-900 hover:bg-darkgreen-700 text-white font-bold py-2 px-10 rounded">
-              Support the cause
-            </button>
+        </div>
+        <div>
+          <div class="flex flex-auto">
+            <div
+              class="flex flex-auto justify-end cursor-pointer font-bold"
+              (click)="onExitClick($event)"
+            >
+              X
+            </div>
+          </div>
+          <h2 class="mt-16 text-gray-800 text-3xl font-semibold">
+            {{this.tokenName}}
+          </h2>
+          <span class="font-bold text-xl"
+            >How your contribution will be used</span
+          >
+          <p>
+            Triglav National park will use your donations for project called
+            "Vrh Julijcev", that is trying to improve the state of species and
+            habitat types in Triglav National park. The project has 8 goals
+            which will be achieved with the help of 9 slovenian partners that
+            work in the field of preserving nature, culture heritage and
+            promotion.
+          </p>
+
+          <div class="grid grid-cols-2 mt-6">
+            <div></div>
+            <div>
+              <button
+                class="
+                  bg-darkgreen-900
+                  hover:bg-darkgreen-700
+                  text-white
+                  font-bold
+                  py-2
+                  px-10
+                  rounded
+                "
+              >
+                Support the cause
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  </div>
   <div class="overlay" *ngIf="this.popup">
-  <div class="popup">
-    <h3>Supporting a good cause</h3>
-    <a class="close" (click)="this.cancelPopup()">&times;</a>
-    <div class="content">
-      <p class="font-medium text-l	py-2">You are about to become an owner of <span class="font-bold">{{this.popupShare}}%</span> of virtual natural landmark: <span class="font-bold">{{this.tokenName}}</span>.</p>
-      <p class="font-medium text-xl	py-2"><span class="font-bold">NFT value:</span> {{this.popupPrice}} €</p>
-      <button class="bg-darkgreen-900 hover:bg-darkgreen-700 text-white font-bold py-2 px-10 rounded" style="margin-left: 50%;" (click)="this.addToCart()">
-        Add to cart
-      </button>
+    <div class="popup">
+      <h3>Supporting a good cause</h3>
+      <a class="close" (click)="this.cancelPopup()">&times;</a>
+      <div class="content">
+        <p class="font-medium text-l py-2">
+          You are about to become an owner of
+          <span class="font-bold">{{this.popupShare}}%</span> of virtual natural
+          landmark: <span class="font-bold">{{this.tokenName}}</span>.
+        </p>
+        <p class="font-medium text-xl py-2">
+          <span class="font-bold">NFT value:</span> {{this.popupPrice}} €
+        </p>
+        <button
+          class="
+            bg-darkgreen-900
+            hover:bg-darkgreen-700
+            text-white
+            font-bold
+            py-2
+            px-10
+            rounded
+          "
+          style="margin-left: 50%"
+          (click)="this.addToCart()"
+        >
+          Add to cart
+        </button>
+      </div>
     </div>
-  </div>
   </div>
 </div>

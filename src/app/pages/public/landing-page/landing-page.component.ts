@@ -26,4 +26,7 @@ export class LandingPageComponent {
 
   ]
 
+  buttonOnClick(i: number[]) {
+    console.log("HELLO")
+  }
 }

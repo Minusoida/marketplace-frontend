@@ -1,5 +1,6 @@
-<div class="map"
-     leaflet
-     (leafletMapReady)="onMapReady($event)"
-     [leafletOptions]="options"
-     [leafletLayersControl]="layersControl"></div>
+<img class="background-image" src='assets/images/triglavski_narodni_park.PNG'>
+<div class="buttons">
+  <div *ngFor='let i of items'>
+    <span *ngFor='let j of i' class="red-{{j}}" (click)='{{console.log(j)}}'><i></i></span>
+  </div>
+</div>

@@ -13,7 +13,6 @@
     "test:coverage": "ng test --coverage",
     "lint": "ng lint",
     "analyze": "webpack-bundle-analyzer dist/angular-boilerplate/stats.json",
-    "heroku-postbuild": "npm install"
   },
   "dependencies": {
     "@angular/cli": "11.2.13",

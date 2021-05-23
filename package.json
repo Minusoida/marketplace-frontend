@@ -12,7 +12,7 @@
     "test:e2e": "ng e2e",
     "test:coverage": "ng test --coverage",
     "lint": "ng lint",
-    "analyze": "webpack-bundle-analyzer dist/angular-boilerplate/stats.json",
+    "analyze": "webpack-bundle-analyzer dist/angular-boilerplate/stats.json"
   },
   "dependencies": {
     "@angular/cli": "11.2.13",

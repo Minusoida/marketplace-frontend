@@ -75,6 +75,13 @@ export const PUBLIC_ROUTES: Routes = [
             '@app/pages/public/token/token.module'
             ).then((m) => m.TokenModule),
       },
+      {
+        path: Path.Triglav,
+        loadChildren: () =>
+          import(
+            '@app/pages/public/triglav/triglav.module'
+            ).then((m) => m.TriglavModule),
+      },
     ],
   },
 ];

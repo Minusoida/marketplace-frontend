@@ -1,22 +1,22 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HexagonsPage } from './hexagons.page';
+import { TriglavPage } from './triglav.page';
 
 @NgModule({
-  declarations: [HexagonsPage],
+  declarations: [TriglavPage],
   imports: [
     CommonModule,
     RouterModule.forChild([
       {
         path: '',
-        component: HexagonsPage,
+        component: TriglavPage,
         data: {
-          title: 'Hexagons',
+          title: 'Triglav',
           robots: 'noindex, nofollow',
         },
       },
     ]),
   ],
 })
-export class HexagonsModule {}
+export class TriglavModule {}

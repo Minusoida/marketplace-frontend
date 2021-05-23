@@ -35,6 +35,13 @@ export const PRIVATE_ROUTES: Routes = [
             ).then((m) => m.TokenModule),
       },
       {
+        path: Path.Triglav,
+        loadChildren: () =>
+          import(
+            '@app/pages/public/triglav/triglav.module'
+            ).then((m) => m.TriglavModule),
+      },
+      {
         path: Path.Hexagons,
         loadChildren: () =>
           import(

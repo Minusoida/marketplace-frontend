@@ -16,6 +16,8 @@ export enum Path {
   Dashboard = 'dashboard',
   Token = 'token',
   Hexagons = 'hexagons',
+  Triglav="triglavski-narodni-park",
+  ŠkocjanskeJame="skocjanske-jame",
 
   // Settings
   Settings = 'settings',

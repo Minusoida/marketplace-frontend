@@ -1,22 +1,22 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HexagonsPage } from './hexagons.page';
+import { MyCollectionPage } from './my-collection.page';
 
 @NgModule({
-  declarations: [HexagonsPage],
+  declarations: [MyCollectionPage],
   imports: [
     CommonModule,
     RouterModule.forChild([
       {
         path: '',
-        component: HexagonsPage,
+        component: MyCollectionPage,
         data: {
-          title: 'Hexagons',
+          title: 'MyCollectionPage',
           robots: 'noindex, nofollow',
         },
       },
     ]),
   ],
 })
-export class HexagonsModule {}
+export class MyCollectionModule {}

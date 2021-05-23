@@ -41,6 +41,13 @@ export const PUBLIC_ROUTES: Routes = [
           ).then((m) => m.ForgotPasswordModule),
       },
       {
+        path: Path.MyCollection,
+        loadChildren: () =>
+          import(
+            '@app/pages/private/my-collection/my-collection.module'
+            ).then((m) => m.MyCollectionModule),
+      },
+      {
         path: Path.ForgotPasswordEmailSent,
         loadChildren: () =>
           import(

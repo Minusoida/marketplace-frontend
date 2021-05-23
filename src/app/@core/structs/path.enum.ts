@@ -16,6 +16,7 @@ export enum Path {
   Dashboard = 'dashboard',
   Token = 'token',
   Hexagons = 'hexagons',
+  MyCollection = 'my-collection',
 
   // Settings
   Settings = 'settings',

@@ -20,8 +20,13 @@ module.exports = {
       darkbrown: '#211',
       lightblue: '#cfe6f6',
       lightgreen: '#6ebbb5',
-      darkgreen: '#006764',
+      darkgreen: {
+        700: '#00807b',
+        900: '#006764',
+      },
       white: '#ffffff',
+      black: '#000000',
+      lightgray: ''
     },
   },
   variants: {},

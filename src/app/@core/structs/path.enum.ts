@@ -2,6 +2,7 @@ export enum Path {
   // General containers
   Home = '',
   NotFound = '404',
+  Landing = 'landing',
 
   // Auth
   SignIn = 'sign-in',
@@ -16,6 +17,7 @@ export enum Path {
   Dashboard = 'dashboard',
   Token = 'token',
   Hexagons = 'home',
+  MyCollection = 'my-collection',
   Triglav="triglavski-narodni-park",
   ŠkocjanskeJame="skocjanske-jame",
 

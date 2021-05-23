@@ -18,7 +18,7 @@ export const PRIVATE_ROUTES: Routes = [
   },
   {
     path: Path.Settings,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       {
         path: Path.SettingsAccount,
@@ -26,6 +26,13 @@ export const PRIVATE_ROUTES: Routes = [
           import('@pages/private/settings/account/account.module').then(
             (m) => m.AccountModule,
           ),
+      },
+      {
+        path: Path.MyCollection,
+        loadChildren: () =>
+          import(
+            '@app/pages/private/my-collection/my-collection.module'
+            ).then((m) => m.MyCollectionModule),
       },
       {
         path: Path.Token,

@@ -12,7 +12,8 @@
     "test:e2e": "ng e2e",
     "test:coverage": "ng test --coverage",
     "lint": "ng lint",
-    "analyze": "webpack-bundle-analyzer dist/angular-boilerplate/stats.json"
+    "analyze": "webpack-bundle-analyzer dist/angular-boilerplate/stats.json",
+    "heroku-postbuild": "npm install"
   },
   "dependencies": {
     "@angular/cli": "11.2.13",
@@ -27,9 +28,14 @@
     "@angular/router": "11.2.13",
     "@angular/service-worker": "11.2.13",
     "@turf/turf": "^6.3.0",
+    "typescript": "^2.0.3",
     "rxjs": "6.6.7",
     "tslib": "2.2.0",
     "zone.js": "0.11.4"
+  },
+  "engines": {
+    "node": "12.14.1",
+    "npm": "6.13.4"
   },
   "devDependencies": {
     "@angular-builders/jest": "12.0.0",

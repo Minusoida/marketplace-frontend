@@ -1,9 +1,11 @@
-<div class="max-w-[calc(100%+1rem)]  py-6 px-8 bg-white shadow-lg rounded-lg my-10 mx-10">
-
+<div class="flex flex-col justify-center items-center">
+  
+  <div class="max-w-[calc(100%+1rem)] japop py-6 px-8 bg-white shadow-lg rounded-lg my-10 mx-10">
+  
   <div>
-    <div class="grid grid-cols-3">
-      <div class="px-20 flex flex-col items-center col-span-2">
-<!--        <ul class="buttons bg-cover" style="width:100%; height:100%; background-image: url('./assets/images/triglavski_narodni_park.png')">-->
+    <div class="grid grid-cols-3 ">
+      <div class="px-20 flex flex-col justify-center items-center col-span-2">
+  <!--        <ul class="buttons bg-cover" style="width:100%; height:100%; background-image: url('./assets/images/triglavski_narodni_park.png')">-->
           <ul id="hexGrid" style="width:100%; background-image: url('./assets/images/triglavski_narodni_park.png'); background-size: 100% 100%;">
             <li *ngFor='let state of items; let i = index' class="hex red-{{state[0]}}">
               <div class="hexIn">
@@ -17,8 +19,8 @@
       <div>
           <h2 class="mt-20 text-gray-800 text-3xl font-semibold">{{this.tokenName}}</h2>
         <span class="font-bold text-xl">How your contribution will be used</span>
-        <p class="ml-4">Triglav National park will use your donations for project called "Vrh Julijcev", that is trying to improve the state of species and habitat types in Triglav National park. The project has 8 goals which will be achieved with the help of 9 slovenian partners that work in the field of preserving nature, culture heritage and promotion.</p>
-
+        <p>Triglav National park will use your donations for project called "Vrh Julijcev", that is trying to improve the state of species and habitat types in Triglav National park. The project has 8 goals which will be achieved with the help of 9 slovenian partners that work in the field of preserving nature, culture heritage and promotion.</p>
+  
         <div class="grid grid-cols-2 mt-6">
           <div></div>
           <div>
@@ -30,8 +32,8 @@
       </div>
     </div>
   </div>
-</div>
-<div class="overlay" *ngIf="this.popup">
+  </div>
+  <div class="overlay" *ngIf="this.popup">
   <div class="popup">
     <h3>Supporting a good cause</h3>
     <a class="close" (click)="this.cancelPopup()">&times;</a>
@@ -42,5 +44,6 @@
         Add to cart
       </button>
     </div>
+  </div>
   </div>
 </div>

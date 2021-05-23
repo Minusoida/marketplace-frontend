@@ -20,11 +20,19 @@ export class HeaderComponent implements OnInit {
 
   constructor(private router: Router, private authService: AuthService) {}
 
+  get isLoggedIn() {
+    return this.authService.isLoggedIn;
+  }
+
   ngOnInit(): void {}
 
   onClickSignOut(): void {
-    this.authService.signOut();
-    this.router.navigate(['/', Path.SignIn]);
+    if (this.isLoggedIn) {
+      this.authService.signOut();
+      this.router.navigate(['/', Path.SignIn]);
+    } else {
+      this.router.navigateByUrl(`/${Path.SignUp}`);
+    }
   }
 
   @HostListener('window:scroll', ['$event']) // for window scroll events

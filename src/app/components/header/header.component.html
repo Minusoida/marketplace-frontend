@@ -61,6 +61,7 @@
           focus:ring-4 focus:ring-offset-gray-300
           focus:outline-none
           bg-yellow-900
+          rounded
         "
       >
         My collection
@@ -80,7 +81,8 @@
         "
         (click)="onClickSignOut()"
       >
-        Sign out
+        <div *ngIf="isLoggedIn">Sign out</div>
+        <div *ngIf="!isLoggedIn">Sign in</div>
       </button>
     </div>
   </nav>

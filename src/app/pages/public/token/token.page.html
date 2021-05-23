@@ -6,8 +6,8 @@
           <ul id="hexGrid" style="width:100%; background-image: url('./assets/images/triglavski_narodni_park.png'); background-size: 100% 100%;">
             <li *ngFor='let state of items; let i = index' class="hex red-{{state[0]}}">
               <div class="hexIn">
-                <a class="hexLink" (click)="buttonOnClick($event, i, state[0])" [ngClass]="'hex-' + state[0]" style="opacity: 0.2">
-                  <span></span>
+                <a class="hexLink" (click)="buttonOnClick($event, i, state[0])" [ngClass]="'hex-' + state[0]" style="opacity: 0.3">
+                  <span style="opacity: 1 !important; color: black !important; font-weight: bold !important;">{{this.textFromState(state[0])}}</span>
                 </a>
               </div>
             </li>
@@ -58,7 +58,7 @@
     <h3>Changed your mind?</h3>
     <a class="close" (click)="this.cancelPopupDelete()">&times;</a>
     <div class="content">
-      <p class="font-medium text-l	py-2">Are you sure that you <span class="font-bold">do not</span> want to become <span class="font-bold">the only</span> owner of <span class="font-bold">{{this.items[this.popupIx][0]}}%</span> of virtual natural landmark: <span class="font-bold">{{this.tokenName}}</span>.</p>
+      <p class="font-medium text-l	py-2">Are you sure that you <span class="font-bold">do not</span> want to become <span class="font-bold">the only</span> owner of <span class="font-bold">{{this.items[this.popupIx][0]}}%</span> of virtual natural landmark: <span class="font-bold">{{this.tokenName}}</span>?</p>
       <p class="font-medium text-xl	py-2"><span class="font-bold">NFT value:</span> {{this.items[this.popupDeleteIx][1]}} €</p>
       <button class="bg-darkgreen-900 hover:bg-darkgreen-700 text-white font-bold py-2 px-10 rounded" style="margin-left: 40%;" (click)="this.removeFromCart()">
         Remove from cart
@@ -109,8 +109,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
   <div class="overlay" *ngIf="this.popup">
     <div class="popup">
       <h3>Supporting a good cause</h3>
@@ -118,11 +116,11 @@
       <div class="content">
         <p class="font-medium text-l py-2">
           You are about to become an owner of
-          <span class="font-bold">{{this.popupShare}}%</span> of virtual natural
+          <span class="font-bold">{{this.items[this.popupIx][2]}}%</span> of virtual natural
           landmark: <span class="font-bold">{{this.tokenName}}</span>.
         </p>
         <p class="font-medium text-xl py-2">
-          <span class="font-bold">NFT value:</span> {{this.popupPrice}} €
+          <span class="font-bold">NFT value:</span> {{this.items[this.popupIx][1]}} €
         </p>
         <button
           class="
@@ -142,7 +140,6 @@
       </div>
     </div>
   </div>
-</div>
 
 <div class="overlay" *ngIf="this.popupBought">
   <div class="popup">

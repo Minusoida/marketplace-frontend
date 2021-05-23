@@ -95,8 +95,6 @@ export class TokenPage implements OnInit {
     [0, 0, 3.57],
   ];
   popup: boolean = false;
-  popupShare: number = 0;
-  popupPrice: number = 0;
   popupIx: number = 0;
   cart: number[] = [];
   popupDelete: any;
@@ -113,7 +111,6 @@ export class TokenPage implements OnInit {
       this.popup = true;
       this.popupIx = ix;
     } else if (state === 3) {
-      this.items[ix][0] = 1;
       this.popupDeleteIx = ix;
       this.popupDelete = true
     }
@@ -130,12 +127,11 @@ export class TokenPage implements OnInit {
 
   addToCart() {
     this.popup = false;
+    this.cart.push(this.popupIx)
   }
 
   onExitClick(event: any) {
     this.router.navigateByUrl('/');
-    this.popup = false
-    this.cart.push(this.popupIx)
   }
 
   sumCart() {
@@ -165,5 +161,19 @@ export class TokenPage implements OnInit {
 
   cancelBought() {
     this.popupBought = false;
+  }
+
+  textFromState(state: number) {
+    if(state === 0) {
+      return ""
+    } else if (state === 1) {
+      return "Buy NFT"
+    } else if (state === 2) {
+      return "NFT taken"
+    } else if (state === 3){
+      return "Sell NFT"
+    } else {
+      return "You own it"
+    }
   }
 }

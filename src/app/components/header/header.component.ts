@@ -37,7 +37,6 @@ export class HeaderComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event']) // for window scroll events
   onScroll(event: any) {
-    console.log(document.documentElement.scrollTop);
     if (document.documentElement.scrollTop < 15) {
       this.logoVisible = false;
     } else {

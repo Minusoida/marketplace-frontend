@@ -7,13 +7,11 @@ import { Path } from '@core/structs';
 })
 export class TriglavPage implements OnInit {
   path = Path;
-  tokenName:string = "Triglav"
+  tokenName: string = 'Triglav';
   givenFunding: number = 20;
   wantedFunding: number = 100;
   price: number = 20;
   constructor() {}
 
-  ngOnInit(): void {
-    console.log("ojal")
-  }
+  ngOnInit(): void {}
 }

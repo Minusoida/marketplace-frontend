@@ -2,7 +2,7 @@ export enum Path {
   // General containers
   Home = '',
   NotFound = '404',
-
+  Landing = 'landing',
   // Auth
   SignIn = 'sign-in',
   SignUp = 'sign-up',
@@ -32,4 +32,5 @@ export enum Path {
   Users = 'users',
   UsersOverview = 'overview',
   UsersProfile = ':username',
+
 }

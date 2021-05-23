@@ -82,6 +82,13 @@ export const PUBLIC_ROUTES: Routes = [
             '@app/pages/public/token/token.module'
             ).then((m) => m.TokenModule),
       },
+      {
+        path: Path.Landing,
+        loadChildren: () =>
+          import(
+            '@app/pages/public/landing-page/landing-page.module'
+            ).then((m) => m.LandingPageModule),
+      },
     ],
   },
 ];

@@ -17,12 +17,22 @@
       <div>
           <h2 class="mt-20 text-gray-800 text-3xl font-semibold">{{this.tokenName}}</h2>
         <span class="font-bold text-xl">How your contribution will be used</span>
-        <p class="ml-4">Triglav National park will use your donations for project called "Vrh Julijcev", that is trying to improve the state of species and habitat types in Triglav National park. The project has 8 goals which will be achieved with the help of 9 slovenian partners that work in the field of preserving nature, culture heritage and promotion.</p>
+        <p class="mb-4">Triglav National park will use your donations for project called "Vrh Julijcev", that is trying to improve the state of species and habitat types in Triglav National park. The project has 8 goals which will be achieved with the help of 9 slovenian partners that work in the field of preserving nature, culture heritage and promotion.</p>
+        <span class="font-bold text-xl" *ngIf="this.cart.length > 0">My cart</span>
+        <ul>
+          <li *ngFor="let ix of cart; let i = index">
+            <span *ngIf="i < 3">1 &times; <span class="font-bold">{{this.items[ix][2]}}%</span> share (<span class="font-bold">{{this.tokenName}}</span>) = <span class="font-bold">{{this.items[ix][1]}} ETH</span></span>
+          </li>
+          <li class="font-bold" style="margin-left: 49%" *ngIf="this.cart.length > 3">. . .</li>
+          <li style="border-top: 1px solid #ccc" class="pb-2" *ngIf="this.cart.length > 0"><span class="font-bold">Sum:</span> {{sumCart()}} ETH</li>
+        </ul>
 
+
+        <div *ngIf="this.cart.length === 0" class="italic font-bold">Click on hexagons to contribute to a greater cause</div>
         <div class="grid grid-cols-2 mt-6">
           <div></div>
           <div>
-            <button class="bg-darkgreen-900 hover:bg-darkgreen-700 text-white font-bold py-2 px-10 rounded">
+            <button class="bg-darkgreen-900 hover:bg-darkgreen-700 text-white font-bold py-2 px-10 rounded" *ngIf="this.cart.length > 0">
               Support the cause
             </button>
           </div>
@@ -37,7 +47,7 @@
     <a class="close" (click)="this.cancelPopup()">&times;</a>
     <div class="content">
       <p class="font-medium text-l	py-2">You are about to become an owner of <span class="font-bold">{{this.popupShare}}%</span> of virtual natural landmark: <span class="font-bold">{{this.tokenName}}</span>.</p>
-      <p class="font-medium text-xl	py-2"><span class="font-bold">NFT value:</span> {{this.popupPrice}} €</p>
+      <p class="font-medium text-xl	py-2"><span class="font-bold">NFT value:</span> {{this.popupPrice}} ETH</p>
       <button class="bg-darkgreen-900 hover:bg-darkgreen-700 text-white font-bold py-2 px-10 rounded" style="margin-left: 50%;" (click)="this.addToCart()">
         Add to cart
       </button>

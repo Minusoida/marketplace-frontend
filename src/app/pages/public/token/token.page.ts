@@ -27,10 +27,12 @@ export class TokenPage implements OnInit {
     [1, 20, 3.57], [1, 20, 3.57], [1, 20, 3.57], [1, 20, 3.57], [0, 0, 3.57], [0, 0, 3.57], [0, 0, 3.57], [0, 0, 3.57], [0, 0, 3.57], [0, 0, 3.57], [0, 0, 3.57],
     [0, 0, 3.57], [0, 0, 3.57], [0, 0, 3.57], [0, 0, 3.57], [0, 0, 3.57], [0, 0, 3.57], [0, 0, 3.57], [0, 0, 3.57], [0, 0, 3.57], [0, 0, 3.57],
   ]
+
   popup: boolean = false;
   popupShare: number = 0;
   popupPrice: number = 0;
   popupIx: number = 0;
+  cart: number[] = [];
   constructor() {}
 
   ngOnInit(): void {
@@ -45,6 +47,10 @@ export class TokenPage implements OnInit {
       this.popupIx = ix
     } else if (state === 3) {
       this.items[ix][0] = 1
+      const index = this.cart.indexOf(ix, 0);
+      if (index > -1) {
+        this.cart.splice(index, 1);
+      }
     }
   }
 
@@ -55,5 +61,14 @@ export class TokenPage implements OnInit {
 
   addToCart() {
     this.popup = false
+    this.cart.push(this.popupIx)
+  }
+
+  sumCart() {
+    let sum = 0
+    for (let ix = 0; ix < this.cart.length; ix++) {
+      sum += this.items[this.cart[ix]][1]
+    }
+    return sum
   }
 }

@@ -10,17 +10,20 @@ Team members: Luka Žontar, Jakob Maležič, Matic Bregar, Anže Habjan
 
 ## Idea
 
-With the rise of cryptocurrencies non-fungible tokens (short NFT) are gaining popularity. Although, they are mostly used for transactions,
-a new use case is recently becoming more and more popular. That use case are digital assets. The most famous are probably NBA, which sells
-events that happened in their games and Twitter, which uses NFT for selling tweets. These can then be traded between different users.
-That's how we've gotten an idea, to help charity companies by using NFTs. We created a web application, where a user can donate to charity
-with NFTs and also get something in return.
+With the rise of cryptocurrencies, non-fungible tokens (short for NFT) are gaining popularity. Although, they are mostly used for transactions,
+creation of unique digital assets is recently becoming more and more popular. 
 
-Our application currently focuses in donating to companies in Slovenia that are responsible for large nature environments, like caves, forests,
-national parks etc. We split such environments into smaller blocks which users can virtually buy with NFTs. The money made from these 
-transactions is then donated to companies that take care of a given environment. This way, the users get virtual assets, which he can
+Our web application currently focuses on funding  non-profitable organizations in Slovenia that are responsible for large nature environments, like caves, forests,
+national parks etc. We split such environments into smaller virtual chunks which users can buy and in exchange receive NFTs. The money made from these 
+transactions is then donated to companies that take care of a given natural landmarks. This way, the users get virtual assets, which he can
 later sell, for potentially higher value, while also doing something for a good cause.
 
+When the user opens the application for the first time, he should sign up. After signing up, we are redirected to the dashboard, where
+we can see our logo and the main idea of the application. If we scroll down, we get a list of natural landmarks, which we can support in exchange
+for NFTs. By clicking one of the hexagons, we open an interface where we can buy a virtual chunk of the given natural landmark and thus support organization that takes care of it.
+Parts that are already taken are gray-ed out. Parts that the user has already bought are light blue. To buy a new block of the environment, we
+simply click on the desired hexagon, which shows us it's value and option to add it to cart. Selected blocks appear on the right and to finish the transaction
+we click support the cause.
 
 ## Technologies
 
